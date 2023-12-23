@@ -39,7 +39,7 @@ st.write(f"**Goodreads Rating:** {selected_book_info['avg goodreads rating']}")
 st.write(f"**My Rating:** {selected_book_info['my rating']}")
 
 google_books_api_url = 'https://www.googleapis.com/books/v1/volumes'
-params = {'q': f'intitle:{selected_book}'}
+params = {'q': f'intitle:{selected_book}', 'key': st.secrets['book_key']}
 response = requests.get(google_books_api_url, params=params)
 
 if response.ok:
